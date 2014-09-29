@@ -5,7 +5,7 @@ Scripts to use logrotate with rosbag and push data to a remote server
 
 # Configuration
 1. (optional) Create a new account on the remote machine, and restrict it as desired
-2. On the robot machine, create a new keypair with on passphrase 
+2. On the robot machine, create a new keypair with a blank passphrase 
 
   ```
   ssh-keygen -f ~/.ssh/id_log_copy -C "Automated remote backup"
