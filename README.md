@@ -4,6 +4,8 @@ rosbag-rotate
 Scripts to use logrotate with rosbag and push data to a remote server
 
 # Configuration
+
+## SSH
 1. (optional) Create a new account on the remote machine, and restrict it as desired
 2. On the robot machine, create a new keypair with a blank passphrase 
 
