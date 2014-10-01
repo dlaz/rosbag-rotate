@@ -28,13 +28,13 @@ Scripts to use logrotate with rosbag and push data to a remote server
   ssh-copy-id -i ~/.ssh/id_copy_log.pub [USER@]REMOTE_MACHINE
   ```
   
-4. (If you created a new user for backups and want to handle security restrictions through the user, skip to step ...) On the remote machine, copy rrsync to somewhere on your path. This is the path to rrsync on ubuntu - other systems may have it elsewhere.
+4. On the remote machine, copy rrsync to somewhere on your path. This is the path to rrsync on ubuntu - other systems may have it elsewhere.
 
   ```
   gunzip /usr/share/doc/rsync/scripts/rrsync.gz -c > ~/bin/rrsync
   ```
   
-5. Restrict the newly created key pair to only rsync by prepending the following to the line for your new key in the remote machine's `~/.ssh/authorized_keys`
+5. (If you created a new user for backups and want to handle security restrictions through the user, skip this step) Restrict the newly created key pair to only rsync by prepending the following to the line for your new key in the remote machine's `~/.ssh/authorized_keys`
 
   ```
   command="$HOME/bin/rrsync ~[LOG_DIR]",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding
