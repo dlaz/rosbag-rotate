@@ -11,7 +11,7 @@ status=$?
 if test $status -eq 0
 then
 	# remove files older than one week
-	find $BAG_DIR/* -mtime 7 -exec rm {} \;
+	find $BAG_DIR/* -mtime +7 -exec rm {} \;
 else
 	# something went wrong - send an email maybe
 	exit 1;
